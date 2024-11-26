@@ -2,15 +2,38 @@ import type { Config } from "tailwindcss";
 
 export default {
   content: [
-    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        background: {
+          bg_primary: "#FFFFFF",
+          bg_secondary: "#F9FAFB",
+        },
+        border: {
+          border_primary: "#D0D5DD",
+          border_secondary: "#D6BBFB",
+        },
+        buttons: {
+          button_primary: "#7F56D9",
+          button_secondary_fb: "#6941C6",
+          button_secondary_fg: "#344054",
+          button_tertiary_fg: "#475467",
+        },
+        foreground: {
+          fq_quaternary: "#667085",
+        },
+        text: {
+          text_primary: "#101828",
+          text_secondary: "#344054",
+          text_tertiary: "#475467",
+          text_placeholder: "#667085",
+        },
+      },
+      fontFamily: {
+        inter: ["var(--font-inter)", "sans-serif"],
       },
     },
   },
