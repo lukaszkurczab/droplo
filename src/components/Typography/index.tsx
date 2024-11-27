@@ -11,7 +11,7 @@ const Typography: FC<TypographyProps> = ({
   children,
   className = "",
 }) => {
-  const baseStyles = "text.text_primary text-base font-medium";
+  const baseStyles = "font-inter text.text_primary text-base font-medium";
   const combinedStyles = `${baseStyles} ${className}`;
 
   return <Tag className={combinedStyles}>{children}</Tag>;

@@ -27,6 +27,7 @@ export default {
         },
         text: {
           text_primary: "#101828",
+          text_primary_fg: "#FFFFFF",
           text_secondary: "#344054",
           text_tertiary: "#475467",
           text_placeholder: "#667085",
