@@ -19,4 +19,7 @@ module.exports = {
     "!src/**/*.d.ts",
     "!src/app/*",
   ],
+  moduleNameMapper: {
+    "^@/(.*)$": "<rootDir>/src/$1",
+  },
 };

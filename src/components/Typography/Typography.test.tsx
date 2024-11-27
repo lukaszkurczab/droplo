@@ -24,7 +24,7 @@ describe("Typography component", () => {
   it("applies the default styles", () => {
     render(<Typography>Styled text</Typography>);
     const element = screen.getByText("Styled text");
-    expect(element).toHaveClass("text.text_primary text-base font-medium");
+    expect(element).toHaveClass("text.text_primary text-sm font-medium");
   });
 
   it("applies additional custom classes", () => {
@@ -38,7 +38,7 @@ describe("Typography component", () => {
       <Typography className="text-lg font-bold">Combined styles</Typography>
     );
     const element = screen.getByText("Combined styles");
-    expect(element).toHaveClass("text.text_primary text-base font-medium");
+    expect(element).toHaveClass("text.text_primary text-sm font-medium");
     expect(element).toHaveClass("text-lg font-bold");
   });
 });

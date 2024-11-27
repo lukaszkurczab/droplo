@@ -11,7 +11,8 @@ const Button: FC<ButtonProps> = ({
   children,
   ...props
 }) => {
-  const baseStyles = "px-3.5 py-2.5 rounded-lg font-medium";
+  const baseStyles =
+    "px-3.5 py-2.5 rounded-lg font-medium flex items-center gap-1";
 
   const variants = {
     contained:
