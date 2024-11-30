@@ -16,9 +16,9 @@ const Button: FC<ButtonProps> = ({
 
   const variants = {
     contained:
-      "bg-buttons-button_primary text-text-text_primary_fg border border-buttons-button_primary hover:bg-buttons-button_secondary_fb active:bg-buttons-button_primary",
+      "bg-buttons-button_primary border border-buttons-button_primary hover:bg-buttons-button_secondary_fb active:bg-buttons-button_primary",
     outlined:
-      "border border.border-primary text-text-text_secondary bg-background-bg_primary hover:bg-background-bg_secondary active:bg-background-bg_primary",
+      "border border-border-primary bg-background-bg_primary hover:bg-background-bg_secondary active:bg-background-bg_primary",
   };
 
   const combinedStyles = `${baseStyles} ${variants[variant]} ${className}`;

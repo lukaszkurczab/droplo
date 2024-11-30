@@ -7,6 +7,4 @@ export interface INavigationItem {
 
 export interface INavigationList {
   items: INavigationItem[];
-  onItemsChange: (items: INavigationItem[]) => void;
-  onEditItem: (item: INavigationItem) => void;
 }
