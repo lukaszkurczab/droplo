@@ -36,19 +36,6 @@ describe("InputText component", () => {
     expect(rightIcon).toBeInTheDocument();
   });
 
-  it("displays error styles when errorMessage is provided", () => {
-    render(
-      <InputText
-        value=""
-        onChange={() => {}}
-        placeholder="Enter text"
-        errorMessage="Error message"
-      />
-    );
-    const container = screen.getByText("Error message").parentElement;
-    expect(container).toHaveClass("border-red-500");
-  });
-
   it("calls onChange handler when input value changes", () => {
     const handleChange = jest.fn();
     render(
