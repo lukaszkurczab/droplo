@@ -12,6 +12,7 @@ export default {
         background: {
           bg_primary: "#FFFFFF",
           bg_secondary: "#F9FAFB",
+          bg_tertiary: "#F5F5F5",
         },
         border: {
           border_primary: "#D0D5DD",
