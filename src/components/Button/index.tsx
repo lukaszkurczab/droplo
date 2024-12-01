@@ -1,7 +1,7 @@
 import React, { FC, ButtonHTMLAttributes } from "react";
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: "contained" | "outlined";
+  variant?: "contained" | "outlined" | "text";
   className?: string;
 }
 
@@ -19,6 +19,7 @@ const Button: FC<ButtonProps> = ({
       "bg-buttons-button_primary border border-buttons-button_primary hover:bg-buttons-button_secondary_fb active:bg-buttons-button_primary",
     outlined:
       "border border-border-primary bg-background-bg_primary hover:bg-background-bg_secondary active:bg-background-bg_primary",
+    text: "bg-transparent border-none hover:underline active:opacity-75",
   };
 
   const combinedStyles = `${baseStyles} ${variants[variant]} ${className}`;

@@ -11,7 +11,7 @@ describe("Button Component", () => {
     expect(buttonElement).toBeInTheDocument();
     expect(buttonElement).toHaveClass("px-3.5 py-2.5 rounded-lg font-medium");
     expect(buttonElement).toHaveClass(
-      "border border.border-primary text-text-text_secondary bg-background-bg_primary"
+      "border border-border-primary bg-background-bg_primary"
     );
   });
 
@@ -20,7 +20,16 @@ describe("Button Component", () => {
     const buttonElement = screen.getByRole("button", { name: /click me/i });
     expect(buttonElement).toBeInTheDocument();
     expect(buttonElement).toHaveClass(
-      "bg-buttons-button_primary text-text-text_primary_fg border border-buttons-button_primary hover:bg-buttons-button_secondary_fb active:bg-buttons-button_primary"
+      "bg-buttons-button_primary border border-buttons-button_primary hover:bg-buttons-button_secondary_fb active:bg-buttons-button_primary"
+    );
+  });
+
+  it("renders with the 'text' variant", () => {
+    render(<Button variant="text">Click Me</Button>);
+    const buttonElement = screen.getByRole("button", { name: /click me/i });
+    expect(buttonElement).toBeInTheDocument();
+    expect(buttonElement).toHaveClass(
+      "bg-transparent border-none hover:underline active:opacity-75"
     );
   });
 
@@ -37,6 +46,7 @@ describe("Button Component", () => {
     await userEvent.click(buttonElement);
     expect(handleClick).toHaveBeenCalledTimes(1);
   });
+
   it("renders children correctly", () => {
     render(<Button>Submit</Button>);
     const buttonElement = screen.getByRole("button", { name: /submit/i });
