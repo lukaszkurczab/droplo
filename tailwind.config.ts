@@ -16,10 +16,11 @@ export default {
         },
         border: {
           border_primary: "#D0D5DD",
-          border_secondary: "#D6BBFB",
+          border_secondary: "#EAECF0",
         },
         buttons: {
           button_primary: "#7F56D9",
+          button_secondary: "#D6BBFB",
           button_secondary_fb: "#6941C6",
           button_secondary_fg: "#344054",
           button_tertiary_fg: "#475467",
