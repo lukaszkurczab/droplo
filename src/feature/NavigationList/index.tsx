@@ -36,7 +36,7 @@ const NavigationList: FC<NavigationListProps> = ({
       const oldIndex = items.findIndex((item) => item.id === active.id);
       const newIndex = items.findIndex((item) => item.id === over.id);
       const reorderedItems = arrayMove(items, oldIndex, newIndex);
-      console.log(parentId);
+
       dispatch(
         REORDER_ITEMS({
           items: reorderedItems,

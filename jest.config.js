@@ -18,6 +18,8 @@ module.exports = {
     "src/**/*.{js,jsx,ts,tsx}",
     "!src/**/*.d.ts",
     "!src/app/*",
+    "!src/store/*",
+    "!src/types/*",
   ],
   moduleNameMapper: {
     "^@/(.*)$": "<rootDir>/src/$1",
