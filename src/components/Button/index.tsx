@@ -22,9 +22,8 @@ const Button: FC<ButtonProps> = ({
     text: "bg-transparent border-none hover:underline active:opacity-75",
   };
 
-  const variantStyles = variants[variant] || variants.outlined;
-
-  const combinedStyles = `${baseStyles} ${variantStyles} ${className}`.trim();
+  const combinedStyles =
+    `${baseStyles} ${variants[variant]} ${className}`.trim();
 
   const handlePointerDown = (event: React.PointerEvent) => {
     event.stopPropagation();

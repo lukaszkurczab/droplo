@@ -41,6 +41,7 @@ const ListItem: FC<ListItemProps> = ({
                 <a
                   href={item.url}
                   className="text-text-text_tertiary hover:underline"
+                  rel="noopener noreferrer"
                 >
                   {item.url}
                 </a>
@@ -69,10 +70,7 @@ const ListItem: FC<ListItemProps> = ({
           </div>
         ) : (
           <div className="mx-6 py-4">
-            <NavigationEditForm
-              initialData={item}
-              handleClose={() => onCloseEdit()}
-            />
+            <NavigationEditForm initialData={item} handleClose={onCloseEdit} />
           </div>
         )}
       </div>

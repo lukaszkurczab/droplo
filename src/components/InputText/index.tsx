@@ -17,8 +17,12 @@ const InputText: FC<InputTextProps> = ({
   className = "",
   ...props
 }) => {
+  // Klasy CSS jako zmienne dla większej czytelności
   const baseStyle =
-    "flex border  rounded-md overflow-hidden px-3.5 py-2 items-center gap-2 mt-1.5";
+    "flex border rounded-md overflow-hidden px-3.5 py-2 items-center gap-2 mt-1.5";
+  const inputStyle =
+    "w-full border-none text-sm focus:outline-none placeholder:text-text-text_placeholder";
+  const iconStyle = "text-foreground-fq_quaternary";
 
   const handlePointerDown = (event: React.PointerEvent) => {
     event.stopPropagation();
@@ -26,20 +30,16 @@ const InputText: FC<InputTextProps> = ({
 
   return (
     <div className={`${baseStyle} ${className}`}>
-      {iconLeft && (
-        <span className="text-foreground-fq_quaternary">{iconLeft}</span>
-      )}
+      {iconLeft && <span className={iconStyle}>{iconLeft}</span>}
       <input
-        className="w-full border-none text-sm focus:outline-none placeholder:text-text-text_placeholder"
+        className={inputStyle}
         placeholder={placeholder}
         value={value}
         onChange={onChange}
         onPointerDown={handlePointerDown}
         {...props}
       />
-      {iconRight && (
-        <span className="text-foreground-fq_quaternary">{iconRight}</span>
-      )}
+      {iconRight && <span className={iconStyle}>{iconRight}</span>}
     </div>
   );
 };

@@ -36,6 +36,18 @@ describe("InputText component", () => {
     expect(rightIcon).toBeInTheDocument();
   });
 
+  it("does not render left icon when not provided", () => {
+    render(<InputText value="" onChange={() => {}} placeholder="Enter text" />);
+    const leftIcon = screen.queryByTestId("icon-left");
+    expect(leftIcon).not.toBeInTheDocument();
+  });
+
+  it("does not render right icon when not provided", () => {
+    render(<InputText value="" onChange={() => {}} placeholder="Enter text" />);
+    const rightIcon = screen.queryByTestId("icon-right");
+    expect(rightIcon).not.toBeInTheDocument();
+  });
+
   it("calls onChange handler when input value changes", () => {
     const handleChange = jest.fn();
     render(
@@ -44,6 +56,19 @@ describe("InputText component", () => {
     const inputElement = screen.getByPlaceholderText("Enter text");
     fireEvent.change(inputElement, { target: { value: "New value" } });
     expect(handleChange).toHaveBeenCalledTimes(1);
+  });
+
+  it("renders input as disabled when 'disabled' prop is true", () => {
+    render(
+      <InputText
+        value=""
+        onChange={() => {}}
+        placeholder="Enter text"
+        disabled
+      />
+    );
+    const inputElement = screen.getByPlaceholderText("Enter text");
+    expect(inputElement).toBeDisabled();
   });
 
   it("renders with default and additional custom styles", () => {
@@ -66,5 +91,32 @@ describe("InputText component", () => {
     render(<InputText value="Test value" onChange={() => {}} />);
     const inputElement = screen.getByDisplayValue("Test value");
     expect(inputElement).toBeInTheDocument();
+  });
+
+  it("does not propagate pointer down events", () => {
+    const handleParentPointerDown = jest.fn();
+    render(
+      <div onPointerDown={handleParentPointerDown}>
+        <InputText value="" onChange={() => {}} placeholder="Enter text" />
+      </div>
+    );
+    const inputElement = screen.getByPlaceholderText("Enter text");
+    fireEvent.pointerDown(inputElement);
+    expect(handleParentPointerDown).not.toHaveBeenCalled();
+  });
+
+  it("handles pointer down events without propagation", () => {
+    const handlePointerDown = jest.fn((e) => e.stopPropagation());
+    render(
+      <InputText
+        value=""
+        onChange={() => {}}
+        placeholder="Enter text"
+        onPointerDown={handlePointerDown}
+      />
+    );
+    const inputElement = screen.getByPlaceholderText("Enter text");
+    fireEvent.pointerDown(inputElement);
+    expect(handlePointerDown).toHaveBeenCalledTimes(1);
   });
 });
