@@ -33,6 +33,7 @@ const Button: FC<ButtonProps> = ({
     <button
       className={combinedStyles}
       onPointerDown={handlePointerDown}
+      type="button"
       {...props}
     >
       {children || "Button"}
