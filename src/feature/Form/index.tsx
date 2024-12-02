@@ -96,7 +96,12 @@ const Form: React.FC<FormProps> = ({
           </Button>
         </div>
       </form>
-      <Button className="px-2.5" variant="text" onClick={onDelete}>
+      <Button
+        className="px-2.5"
+        variant="text"
+        onClick={onDelete}
+        data-testid="close-edit"
+      >
         <Image src="./trash.svg" width={20} height={20} alt="Cancel" />
       </Button>
     </div>
