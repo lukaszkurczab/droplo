@@ -12,7 +12,7 @@ const Button: FC<ButtonProps> = ({
   ...props
 }) => {
   const baseStyles =
-    "px-3.5 py-2.5 rounded-lg font-medium flex items-center gap-1";
+    "px-3.5 py-2.5 rounded-lg font-medium flex items-center gap-1 transition-colors duration-200";
 
   const variants = {
     contained:
@@ -22,11 +22,21 @@ const Button: FC<ButtonProps> = ({
     text: "bg-transparent border-none hover:underline active:opacity-75",
   };
 
-  const combinedStyles = `${baseStyles} ${variants[variant]} ${className}`;
+  const variantStyles = variants[variant] || variants.outlined;
+
+  const combinedStyles = `${baseStyles} ${variantStyles} ${className}`.trim();
+
+  const handlePointerDown = (event: React.PointerEvent) => {
+    event.stopPropagation();
+  };
 
   return (
-    <button className={combinedStyles} {...props}>
-      {children}
+    <button
+      className={combinedStyles}
+      onPointerDown={handlePointerDown}
+      {...props}
+    >
+      {children || "Button"}
     </button>
   );
 };
