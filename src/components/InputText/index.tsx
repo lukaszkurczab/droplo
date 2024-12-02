@@ -17,7 +17,6 @@ const InputText: FC<InputTextProps> = ({
   className = "",
   ...props
 }) => {
-  // Klasy CSS jako zmienne dla większej czytelności
   const baseStyle =
     "flex border rounded-md overflow-hidden px-3.5 py-2 items-center gap-2 mt-1.5";
   const inputStyle =
