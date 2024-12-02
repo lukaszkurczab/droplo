@@ -1,0 +1,6 @@
+ul:nth-child(2) {
+  li:last-child > div {
+    border-bottom-left-radius: 6px;
+    overflow: hidden;
+  }
+}
